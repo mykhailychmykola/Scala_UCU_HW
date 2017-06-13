@@ -12,8 +12,8 @@ final class Machine(env: Map[String, Any] = Map()) {
       case Var(s) => {
         val n = env.getOrElse(s, throw new Error(s"Wrong variable input $s"))
         n match {
-          case Int => Number(n.asInstanceOf[Int])
-          case Boolean => Bool(n.asInstanceOf[Boolean])
+          case z1: Int => Number(n.asInstanceOf[Int])
+          case z2: Boolean => Bool(n.asInstanceOf[Boolean])
           case _ => throw  new Error(s"We don't have such var in environment $s")
         }
 
